@@ -1,0 +1,20 @@
+{% extends "users/layout.html" %}
+{% load static %}
+{% block body %}
+    
+    <h1 style="color:white;margin-top:1%; margin-left:1%">
+    Course List
+    </h1>
+    <br>
+    <ul>
+    {% for couses in couses %}
+        <li>
+            <a href = "{% url 'users:couses' couses.id %}">{{ couses }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+    <br>
+    <br>
+    <div style="margin-left:1%"><a href="{% url 'realuser:index' %}" class="btn btn-outline-light">Back to homepage</a>
+    </div>
+{% endblock %}

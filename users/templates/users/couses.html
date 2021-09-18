@@ -1,0 +1,68 @@
+{% extends "users/layout.html" %}
+
+{% block body %}
+    <div style="color:white;margin-left:1%"><h1>
+        Course  {{ couses.id }} Detail
+    </h1></div>
+    <u1>
+        <div style="color:white;margin-left:1%">
+        <li>Course Name     : {{ couses.subject}}</li>
+        <li>Sememster  : {{couses.term}}</li>
+        <li>Year       : {{couses.year}}</li>
+        <li>Student    : {{ keekon }} / {{couses.num_student}}</li>
+        <li>Status     : {% if couses.status %}
+                    <b style="color: green;">Available</b>
+                    {%else%}
+                    <b style="color: rgb(255, 9, 9);">Unvaliable</b>
+                
+                    {% endif %}
+        </li></div>
+        
+        
+   
+    </u1>
+    {% if request.user.is_superuser %}
+    <br>
+    <div style="color:white;margin-left:1%"><h3> Student </h3></div>
+    <ul>
+        {% for student in portai %}
+        <li style="color:white">
+            {{ student.first_name }} {{ student.last_name }}
+        </li>
+        {% empty %}
+        <li style="color:white">
+            No student
+        </li>
+        {% endfor %}
+    </ul>
+    
+    {% else %}
+   
+    {% endif %}
+    
+    {% if request.user not in portai %}
+        {% if couses.status and keekon < couses.num_student   %}
+        <div style="margin-left:1%;margin-top:1%"><p><a href="{% url 'users:book' couses.id %}"class="btn btn-outline-success">Register</a></h3></div>
+        {% else %}
+        <div style="margin-left:1%;margin-top:1%"><p><h1 class="btn btn-outline-danger ">Register</h1></h3></div>
+        {% endif %}
+    {% else %}
+    <br>
+    <div style="color:rgb(51, 255, 0);margin-left:1%"><h0>
+        Already Register </h0></div>
+    <br>
+    <br>
+    <div style="margin-left:1%">
+    <p ><a href="{% url 'users:debook' couses.id %}"class="btn btn-outline-danger">Withdraw</a></div>
+    
+    {% endif %}
+    
+
+    <div style="margin-left:1%;margin-top:1%"><a href = "{% url 'users:index' %}"class="btn btn-outline-light">Back to menu</a></div>
+    {% if request.user.is_superuser %}
+    <br>
+    <div style="margin-left:1%"><a href="{% url 'users:admun' couses.id %}"class="btn btn-outline-light">Switch Status</a></div>
+    {% else %}
+   
+    {% endif %}
+{% endblock %}
