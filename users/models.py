@@ -12,11 +12,7 @@ class Couses(models.Model):
     nisit = models.ManyToManyField(User, blank=True,name="nisit")
     status = models.BooleanField(default=True)
 
-    def is_full(self):
-        if self.nisit.count() == self.num_student:
-            return True
-        return False
-
+    
     def __str__(self):
         return f"{self.id}:Subject {self.subject} | Couses ID {self.couseid} "
 

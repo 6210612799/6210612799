@@ -20,7 +20,6 @@ def do_couses(request , couses_id):
     return render(request, "users/couses.html",{
         "couses" : couses,
         "portai" : couses.nisit.all(),
-        "check"  : couses.is_full() ,
         "keekon" : couses.nisit.count(),
         
 
