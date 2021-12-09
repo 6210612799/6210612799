@@ -1,3 +1,23 @@
-# รายชื่อสมาชิกกลุ่ม
-1. ปุณยวัจน์ เอี่ยมทวีสิน 6210612799
-2. ปฤญจ์กาณฑ์ ดิษฐ์สมบูรณ์ 6210612781
+## Hello mister I'm Mc Punyawat Iemthaweesin
+
+- I’m currently pratice python to improve myseft .
+- I’m interested in AI.
+
+### Specialize in:
+- Fontend development
+- Backend development
+
+ 
+### Languages and Tools:
+- Python
+- Javascript
+- HTML
+
+### Contact Me : 
+> 📧 Email : <punyawat.mc@gmail.com>
+
+
+
+<br>
+
+![](https://github-readme-stats.vercel.app/api?username=6210612799&count_private=true&show_icons=true&hide_border=true&theme=tokyonight)
